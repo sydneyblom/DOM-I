@@ -40,3 +40,69 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+
+let mainImg = document.querySelector('#cta-img');
+mainImg.setAttribute ('src', siteContent["cta"]["img-src"]);
+
+
+let midImg = document.querySelector('#middle-img');
+midImg.setAttribute ('src', siteContent["main-content"]["middle-img-src"]);
+
+
+const nav = document.querySelectorAll('a');
+nav.forEach((element, index) => {
+  element.textContent = siteContent['nav'][`nav-item-${index + 1}`];  
+});
+
+const navA = document.querySelectorAll('a');
+navA.forEach( element => {
+ element.style.color = "green";
+})
+
+
+
+let headerText = document.querySelector('h1');
+headerText.innerText = siteContent.cta.h1;
+
+let buttonSelector = document.querySelector('.cta button');
+buttonSelector.textContent = siteContent["cta"]["button"];
+
+const textHeading = document.querySelectorAll('h4');
+textHeading[0].textContent = siteContent["main-content"]["features-h4"];
+textHeading[1].textContent = siteContent['main-content']['about-h4'];
+textHeading[2].textContent = siteContent['main-content']['services-h4'];
+textHeading[3].textContent = siteContent['main-content']['product-h4'];
+textHeading[4].textContent = siteContent['main-content']['vision-h4'];
+
+const textCont = document.querySelectorAll('p');
+textCont[0].textContent = siteContent["main-content"]["features-content"];
+textCont[1].textContent = siteContent['main-content']['about-content'];
+textCont[2].textContent = siteContent['main-content']['services-content'];
+textCont[3].textContent = siteContent['main-content']['product-content'];
+textCont[4].textContent = siteContent['main-content']['vision-content'];
+
+let contactHeading = document.querySelector('section.contact h4');
+contactHeading.textContent = siteContent.contact['contact-h4'];
+
+let contactInfo = document.querySelectorAll('section.contact > p');
+contactInfo[0].innerHTML = siteContent.contact.address;
+contactInfo[1].innerHTML = siteContent.contact.phone;
+contactInfo[2].innerHTML = siteContent.contact.email;
+
+
+document.querySelector("footer p").textContent = siteContent.footer.copyright;
+
+const newContent = document.createElement('footer');
+newContent.textContent ="Website made by Sydney Blom";
+const secondaryContent = document.querySelector('body');
+secondaryContent.append(newContent);
+
+const home = document.createElement("a");
+const homeText = document.createTextNode("Home");
+home.prepend(homeText);
+home.style.color = "green";
+document.querySelector("nav").appendChild(home);
+
+
